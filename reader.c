@@ -8,6 +8,7 @@ struct mesg_buffer {
 	long mesg_type;
 	char mesg_text[100];
 } message;
+
 int main()
 {
 	key_t key;
@@ -16,9 +17,9 @@ int main()
 	key = ftok("progfile", 65);
 	// msgget creates a message queue
 	// and returns identifier
-	msgid = 
+	msgid = msgget(key, 0666 | IPC_CREAT);
 	// msgrcv to receive message
-	
+	msgrcv(msgid, &message, sizeof(message), 1, 0);
 	// display the message
 	printf("Data Received is : %s \n",
 			message.mesg_text);
