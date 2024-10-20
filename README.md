@@ -1,6 +1,7 @@
 # Linux-IPC-Message-Queues
 Linux IPC-Message Queues
-
+## Name: Dineshkarthik N
+## Registernumber: 212223220021
 # AIM:
 To write a C program that receives a message from message queue and display them
 
